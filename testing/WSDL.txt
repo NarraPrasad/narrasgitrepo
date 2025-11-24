@@ -1,0 +1,41 @@
+XSLT 2.0 and 3.0 difference?
+Couple of main deference between xslt 3.0 compare to 2.0
+1. Streaming : XSLT 2.0: No native support for streaming. 
+	XSLT 3.0: Introduces streaming capabilities for processing large XML files efficiently without loading the entire document into memory.
+    Uses xsl:mode streamable="yes" and functions like xsl:stream.
+2.Packages (Modularity) : XSLT 2.0: No formal modularization mechanism.
+XSLT 3.0: Introduces packages for better modularity and reuse of templates. ex : Supports xsl:package, xsl:use-package.
+3. JSON Support : XSLT 2.0: No direct support for JSON. XSLT 3.0: Adds json-to-xml() and xml-to-json() functions.
+transformation between XML and JSON formats is possible.
+4. Maps and arrays not possible in 2.0 and possible in 3.0
+5.Try/catch error handling is not there in 2.0 and possible in 3.0
+
+WSDL is an XML-based language used to describe web services. It defines how to access a web service, the operations it provides, and the data formats it uses.WSDL acts as a contract between a client and a service.
+
+Types of WSDL
+Abstract WSDL – Defines the web service operations, messages, and port types without specifying transport details.
+Concrete WSDL – Extends the abstract WSDL by adding transport and binding details (like HTTP, SOAP, or MIME).
+
+WSDL Elements
+<definitions> – The root element, which contains all service-related definitions.
+<types> – Defines data types used by the web service (usually based on XML Schema).
+<message> – Defines the request and response messages for operations.
+<portType> – Defines operations (functions) and their input/output messages.
+<binding> – Specifies how operations are bound to protocols like SOAP or HTTP.
+<service> – Specifies the web service endpoint.
+
+XPath is a query language for selecting nodes from an XML document. It allows you to navigate XML structures using expressions.
+xpath ex : /bookstore/book/title
+
+XQuery (XML Query Language)
+XQuery is used for querying, transforming, and extracting data from XML documents. It is more powerful than XPath.
+for $b in doc("books.xml")//book
+where $b/price < 20
+return $b/title
+
+Namespace in XML
+A namespace is used to avoid element name conflicts in XML documents. It is declared using xmlns.
+Example:<book xmlns="http://example.com/books">
+    <title>XML Basics</title>
+</book>
+
